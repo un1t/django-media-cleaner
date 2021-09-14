@@ -1,0 +1,8 @@
+venv
+*.egg-info
+.coverage
+.idea
+__pycache__
+tests/media/
+dist/
+build/
