@@ -4,7 +4,6 @@ from io import StringIO
 
 import pytest
 
-from PIL import Image
 from django.conf import settings
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
@@ -12,11 +11,6 @@ from django.core.management import call_command
 
 from django_media_cleaner.code import get_used_media, get_file_fields, get_all_media, get_unused_media
 from .models import Post, Product
-
-
-def media_factory(filename):
-    image = Image.new('RGB', size=[50, 50], color=(155, 0, 0))
-    image.save(os.path.join(settings.MEDIA_ROOT, filename))
 
 
 @pytest.mark.django_db
@@ -123,7 +117,6 @@ def test_find_unused_media_command():
         assert set(out.getvalue().splitlines()) == {
             os.path.join(settings.MEDIA_ROOT, 'product/2.jpg'),
             os.path.join(settings.MEDIA_ROOT, 'post/1.jpg'),
-            'Deleted: 2',
         }
 
     assert os.path.exists(os.path.join(settings.MEDIA_ROOT, 'product/1.jpg'))

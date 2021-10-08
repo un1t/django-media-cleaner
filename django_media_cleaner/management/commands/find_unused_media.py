@@ -12,12 +12,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         media = get_unused_media()
 
-        if options['delete']:
-            for path in media:
-                self.stdout.write(path)
-                os.unlink(path)
-            self.stdout.write('Deleted: {}'.format(len(media)))
-            return
-
         for path in media:
+            if options['delete']:
+                os.unlink(path)
             self.stdout.write(path)

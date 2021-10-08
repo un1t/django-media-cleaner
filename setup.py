@@ -1,8 +1,6 @@
-
 #!/usr/bin/env python
 
 import os
-import re
 from codecs import open as codecs_open
 
 from setuptools import find_packages, setup
@@ -11,7 +9,6 @@ from setuptools import find_packages, setup
 def read(*parts):
     file_path = os.path.join(os.path.dirname(__file__), *parts)
     return codecs_open(file_path, encoding='utf-8').read()
-
 
 
 setup(
