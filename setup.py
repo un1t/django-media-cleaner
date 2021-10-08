@@ -13,7 +13,7 @@ def read(*parts):
 
 setup(
     name='django-media-cleaner',
-    version='0.1.0',
+    version='0.1.1',
     packages=['django_media_cleaner'],
     include_package_data=True,
     requires=['python (>=3.8)', 'django (>=3.2)'],
