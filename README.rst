@@ -39,3 +39,15 @@ To remove them:
 .. code-block::
 
     ./manage.py find_unused_media --delete
+
+
+How to run tests
+----------------
+
+.. code-block::
+
+    python -m venv venv
+    source venv/bin/activate
+    pip install -r tests/requirements.txt
+    pip install -e .
+    py.test
